@@ -49,7 +49,7 @@ export function RegistrationModal({
   const {
     register, handleSubmit, formState: { errors, isSubmitting }, reset,
   } = useForm<FormVals>({
-    resolver: zodResolver(schema) as any,
+    resolver: zodResolver(schema as any) as any,
     defaultValues: { category: defaultCategory ?? COMPETITIONS[0], child_age: 1 },
   });
 
