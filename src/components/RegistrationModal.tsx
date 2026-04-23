@@ -26,7 +26,7 @@ export const COMPETITIONS = [
 const schema = z.object({
   parent_name: z.string().trim().min(2, "Parent name required").max(100),
   child_name: z.string().trim().min(1, "Child name required").max(100),
-  child_age: z.coerce.number().min(0).max(18),
+  child_age: z.number().min(0).max(18),
   category: z.string().min(1, "Select a category"),
   phone: z.string().trim().min(7, "Phone required").max(20).regex(/^[+\d\s-]+$/, "Invalid phone"),
   email: z.string().trim().email().max(255).optional().or(z.literal("")),
@@ -49,7 +49,7 @@ export function RegistrationModal({
   const {
     register, handleSubmit, formState: { errors, isSubmitting }, reset,
   } = useForm<FormVals>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema) as any,
     defaultValues: { category: defaultCategory ?? COMPETITIONS[0], child_age: 1 },
   });
 
@@ -104,7 +104,7 @@ export function RegistrationModal({
                 </div>
                 <div>
                   <Label>Child's Age *</Label>
-                  <Input type="number" min={0} max={18} {...register("child_age")} />
+                  <Input type="number" min={0} max={18} {...register("child_age", { valueAsNumber: true })} />
                   {errors.child_age && <p className="text-xs text-destructive mt-1">{errors.child_age.message}</p>}
                 </div>
                 <div>
