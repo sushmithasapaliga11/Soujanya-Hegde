@@ -14,7 +14,75 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          subject: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          subject?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          subject?: string | null
+        }
+        Relationships: []
+      }
+      kidfest_registrations: {
+        Row: {
+          category: string
+          child_age: number
+          child_name: string
+          city: string | null
+          created_at: string
+          email: string | null
+          id: string
+          notes: string | null
+          parent_name: string
+          phone: string
+        }
+        Insert: {
+          category: string
+          child_age: number
+          child_name: string
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          notes?: string | null
+          parent_name: string
+          phone: string
+        }
+        Update: {
+          category?: string
+          child_age?: number
+          child_name?: string
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          notes?: string | null
+          parent_name?: string
+          phone?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
