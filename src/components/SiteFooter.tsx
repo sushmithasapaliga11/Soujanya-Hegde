@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Instagram, Facebook } from "lucide-react";
 
 const socials = [
@@ -8,7 +8,7 @@ const socials = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative mt-24 bg-gradient-to-br from-primary-deep to-primary text-primary-foreground overflow-hidden"
+    <footer className="relative mt-24 text-primary-foreground overflow-hidden"
       style={{ background: "linear-gradient(135deg, oklch(0.45 0.06 187), oklch(0.62 0.06 187))" }}>
       <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-white/10 blur-3xl animate-float" />
       <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[oklch(0.78_0.13_80)]/20 blur-3xl animate-float" />
@@ -20,14 +20,8 @@ export function SiteFooter() {
           </p>
           <div className="mt-6 flex gap-3">
             {socials.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-                className="h-10 w-10 grid place-items-center rounded-full bg-white/10 hover:bg-[oklch(0.78_0.13_80)] hover:text-foreground transition-all hover:-translate-y-1"
-              >
+              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label}
+                className="h-10 w-10 grid place-items-center rounded-full bg-white/10 hover:bg-[oklch(0.78_0.13_80)] hover:text-foreground transition-all hover:-translate-y-1">
                 <Icon className="h-4 w-4" />
               </a>
             ))}
@@ -36,31 +30,11 @@ export function SiteFooter() {
         <div>
           <h4 className="font-display text-lg font-semibold">Explore</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <Link to="/kidfest" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
-                Kidfest
-              </Link>
-            </li>
-            <li>
-              <a href="https://sparktreefoundation.in/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
-                SparkTree Foundation
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/sareerun.mangalore/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
-                Sarees Run
-              </a>
-            </li>
-            <li>
-              <a href="/chatroom" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
-                Chatroom
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/letzparty_decorstore/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
-                Let'Z Party
-              </a>
-            </li>
+            <li><Link to="/kidfest" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">Kidfest</Link></li>
+            <li><a href="https://sparktreefoundation.in/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">SparkTree Foundation</a></li>
+            <li><a href="https://www.instagram.com/sareerun.mangalore/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">Sarees Run</a></li>
+            <li><a href="/chatroom" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">Chatroom</a></li>
+            <li><a href="https://www.instagram.com/letzparty_decorstore/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">Let'Z Party</a></li>
           </ul>
         </div>
         <div>
@@ -68,20 +42,12 @@ export function SiteFooter() {
             style={{ background: "linear-gradient(135deg, oklch(0.55 0.07 187 / 0.6), oklch(0.45 0.06 187 / 0.4))", backdropFilter: "blur(12px)" }}>
             <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-[oklch(0.78_0.13_80)]/30 blur-2xl" />
             <p className="font-display text-xl font-bold relative z-10">Ready to elevate your events?</p>
-            <p className="mt-2 text-sm text-primary-foreground/80 relative z-10">
-              Join us and create unforgettable experiences.
-            </p>
+            <p className="mt-2 text-sm text-primary-foreground/80 relative z-10">Join us and create unforgettable experiences.</p>
             <div className="mt-5 flex flex-wrap gap-3 relative z-10">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[oklch(0.78_0.13_80)] text-foreground text-sm font-semibold hover:bg-[oklch(0.85_0.13_80)] transition-all hover:-translate-y-0.5 shadow-gold"
-              >
+              <Link to="/contact" className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[oklch(0.78_0.13_80)] text-foreground text-sm font-semibold hover:bg-[oklch(0.85_0.13_80)] transition-all hover:-translate-y-0.5 shadow-gold">
                 Connect
               </Link>
-              <Link
-                to="/kidfest"
-                className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-white/15 text-primary-foreground text-sm font-semibold border border-white/30 hover:bg-white/25 transition-all hover:-translate-y-0.5"
-              >
+              <Link to="/kidfest" className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-white/15 text-primary-foreground text-sm font-semibold border border-white/30 hover:bg-white/25 transition-all hover:-translate-y-0.5">
                 Upcoming
               </Link>
             </div>
