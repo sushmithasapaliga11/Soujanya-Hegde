@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, MapPin } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 
 const socials = [
   { icon: Instagram, href: "https://www.instagram.com/hegdesoujanya/", label: "Instagram" },
@@ -64,13 +64,28 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="font-display text-lg font-semibold">Service Location</h4>
-          <p className="mt-4 flex items-center gap-2 text-sm text-primary-foreground/90">
-            <MapPin className="h-4 w-4" /> Mangalore, India
-          </p>
-          <p className="mt-2 text-sm text-primary-foreground/70">
-            Available across India for premium events.
-          </p>
+          <div className="relative p-6 rounded-2xl overflow-hidden border border-white/20"
+            style={{ background: "linear-gradient(135deg, oklch(0.55 0.07 187 / 0.6), oklch(0.45 0.06 187 / 0.4))", backdropFilter: "blur(12px)" }}>
+            <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-[oklch(0.78_0.13_80)]/30 blur-2xl" />
+            <p className="font-display text-xl font-bold relative z-10">Ready to elevate your events?</p>
+            <p className="mt-2 text-sm text-primary-foreground/80 relative z-10">
+              Join us and create unforgettable experiences.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3 relative z-10">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-[oklch(0.78_0.13_80)] text-foreground text-sm font-semibold hover:bg-[oklch(0.85_0.13_80)] transition-all hover:-translate-y-0.5 shadow-gold"
+              >
+                Connect
+              </Link>
+              <Link
+                to="/kidfest"
+                className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-white/15 text-primary-foreground text-sm font-semibold border border-white/30 hover:bg-white/25 transition-all hover:-translate-y-0.5"
+              >
+                Upcoming
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
       <div className="relative border-t border-white/10">
