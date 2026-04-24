@@ -1,10 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mic2, ChevronDown, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnnouncementMarquee, ReverseMarquee } from "@/components/AnnouncementMarquee";
 import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
+import { RegistrationModal } from "@/components/RegistrationModal";
 import heroImg from "@/assets/hero-soujanya.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
@@ -29,6 +31,8 @@ export const Route = createFileRoute("/")({
 const rail = [g1, g2, g3, g4, kidfest];
 
 function HomePage() {
+  const [registrationOpen, setRegistrationOpen] = useState(false);
+
   return (
     <div className="-mt-20">
       {/* HERO */}
@@ -131,7 +135,7 @@ function HomePage() {
               Because every <span className="italic text-primary">KID</span> is a star
             </h2>
             <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
-              Two days of joy, competitions, performances and unforgettable memories at Palemar Convention Centre, Maryhill — Mangalore.
+              Two days of joy, competitions, performances and unforgettable memories at <a href="https://maps.app.goo.gl/ipia3jdSHg3ct7Hn8" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:opacity-80">Palemar Convention Centre, Maryhill — Mangalore</a>.
             </p>
             <ul className="mt-6 grid grid-cols-2 gap-3 text-sm">
               {["📅 May 16 & 17, 2026","📍 Palemar Convention","🏆 9 Competitions","🎭 Stage Performances","🎪 Flea Market","🏃 Marathon"].map((t) => (
@@ -142,10 +146,15 @@ function HomePage() {
               <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground rounded-full px-8 shadow-elegant">
                 <Link to="/kidfest">Explore Kidfest</Link>
               </Button>
+              <Button size="lg" variant="outline" onClick={() => setRegistrationOpen(true)} className="rounded-full px-8">
+                Register Now!
+              </Button>
             </div>
           </Reveal>
         </div>
       </section>
+
+      <RegistrationModal open={registrationOpen} onOpenChange={setRegistrationOpen} />
     </div>
   );
 }
