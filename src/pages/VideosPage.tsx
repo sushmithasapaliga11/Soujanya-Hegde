@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Reveal } from "@/components/Reveal";
 import { Play, X } from "lucide-react";
@@ -9,18 +8,6 @@ import g4 from "@/assets/gallery-4.jpg";
 import kidfest from "@/assets/kidfest-hero.jpg";
 import hero from "@/assets/hero-soujanya.jpg";
 
-export const Route = createFileRoute("/videos")({
-  head: () => ({
-    meta: [
-      { title: "Watch Me in Action — Soujanya Hegde" },
-      { name: "description", content: "Highlights of stage hosting, weddings, corporate events and brand collaborations." },
-      { property: "og:title", content: "Watch Me in Action — Soujanya Hegde" },
-      { property: "og:description", content: "Highlights of hosting, weddings and corporate events." },
-    ],
-  }),
-  component: VideosPage,
-});
-
 const videos = [
   { id: "dQw4w9WgXcQ", title: "Wedding Hosting Reel", thumb: g1 },
   { id: "ScMzIvxBSi4", title: "Corporate Stage", thumb: g3 },
@@ -30,7 +17,7 @@ const videos = [
   { id: "fJ9rUzIMcZQ", title: "Mrs India Spotlight", thumb: hero },
 ];
 
-function VideosPage() {
+export default function VideosPage() {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div className="py-20 px-6 lg:px-10 bg-background">
@@ -40,7 +27,6 @@ function VideosPage() {
           <h1 className="font-display text-4xl md:text-6xl font-bold mt-3">Watch Me in Action</h1>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">A glimpse of stages, smiles and showtime.</p>
         </Reveal>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {videos.map((v, i) => (
             <Reveal key={v.id} delay={i * 60}>
@@ -61,7 +47,6 @@ function VideosPage() {
           ))}
         </div>
       </div>
-
       {active && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-foreground/90 p-4 animate-fade-in" onClick={() => setActive(null)}>
           <button className="absolute top-6 right-6 h-10 w-10 grid place-items-center rounded-full bg-white/15 text-white hover:bg-white/30">

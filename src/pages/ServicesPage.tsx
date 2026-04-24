@@ -1,18 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { CalendarHeart, Heart, GraduationCap, Megaphone, Mic2 } from "lucide-react";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Soujanya Hegde" },
-      { name: "description", content: "Event planning, wedding hosting, corporate training, influencer promotions and stage hosting by Mrs. Soujanya Hegde." },
-      { property: "og:title", content: "Services — Soujanya Hegde" },
-      { property: "og:description", content: "Event planning, wedding hosting, corporate training, influencer promotions and stage hosting." },
-    ],
-  }),
-  component: ServicesPage,
-});
 
 const services = [
   { icon: CalendarHeart, title: "Event Planning", desc: "End-to-end planning for weddings, galas, launches and private celebrations." },
@@ -22,7 +9,7 @@ const services = [
   { icon: Mic2, title: "Stage Hosting", desc: "Awards nights, conferences, fashion shows — commanding the stage with grace." },
 ];
 
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <div className="py-20 px-6 lg:px-10 bg-background">
       <div className="mx-auto max-w-7xl">
@@ -33,7 +20,6 @@ function ServicesPage() {
             Premium offerings curated for moments that deserve more than ordinary.
           </p>
         </Reveal>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 80}>

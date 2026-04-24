@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -9,20 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MessageCircle, Mail, Phone, MapPin, Instagram, Send } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, Send } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
-
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Soujanya Hegde" },
-      { name: "description", content: "Book Soujanya Hegde for your wedding, corporate event, or stage hosting. Based in Mangalore — available across India." },
-      { property: "og:title", content: "Contact — Soujanya Hegde" },
-      { property: "og:description", content: "Book Soujanya Hegde for your event. Based in Mangalore." },
-    ],
-  }),
-  component: ContactPage,
-});
 
 const schema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -37,7 +24,7 @@ const WHATSAPP = "919999999999";
 const EMAIL = "hello@soujanyahegde.com";
 const PHONE = "+91 99999 99999";
 
-function ContactPage() {
+export default function ContactPage() {
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<Vals>({
     resolver: zodResolver(schema as any) as any,
   });
@@ -56,7 +43,6 @@ function ContactPage() {
     <div className="py-20 px-6 lg:px-10 bg-background relative overflow-hidden">
       <div className="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl animate-float" />
       <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-[oklch(0.78_0.13_80)]/15 blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="text-center mb-12">
           <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Let's create something beautiful</p>
@@ -70,7 +56,6 @@ function ContactPage() {
                     <li className="flex items-center gap-3"><Phone className="h-4 w-4" /> {PHONE}</li>
                     <li className="flex items-center gap-3"><Mail className="h-4 w-4" /> {EMAIL}</li>
                     <li className="flex items-center gap-3"><MapPin className="h-4 w-4" /> Mangalore, India</li>
-                    <li className="flex items-center gap-3"><Instagram className="h-4 w-4" /> @soujanyahegde</li>
                   </ul>
                 </div>
               }
@@ -80,7 +65,6 @@ function ContactPage() {
             Ready to elevate your event? Whether it's a wedding, corporate gathering, or special celebration — I'm here to make it memorable.
           </p>
         </Reveal>
-
         <div className="grid lg:grid-cols-5 gap-8">
           <Reveal className="lg:col-span-3">
             <form onSubmit={handleSubmit(onSubmit)} className="p-8 rounded-3xl bg-card border border-border shadow-soft space-y-5">
@@ -114,7 +98,6 @@ function ContactPage() {
               </Button>
             </form>
           </Reveal>
-
           <Reveal delay={120} className="lg:col-span-2 space-y-4">
             <a
               href={`https://wa.me/${WHATSAPP}?text=Hi%20Soujanya%2C%20I%27d%20like%20to%20book%20you%20for%20my%20event.`}
@@ -131,13 +114,11 @@ function ContactPage() {
                 </div>
               </div>
             </a>
-
             <div className="p-6 rounded-3xl bg-card border border-border space-y-4">
               <Info icon={Phone} label="Phone" value={PHONE} />
               <Info icon={Mail} label="Email" value={EMAIL} />
               <Info icon={MapPin} label="Location" value="Mangalore, India" />
             </div>
-
             <div className="rounded-3xl overflow-hidden border border-border h-48 bg-cream relative">
               <iframe
                 title="Mangalore"

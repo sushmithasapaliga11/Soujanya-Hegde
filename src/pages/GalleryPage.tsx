@@ -1,17 +1,15 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
 import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/20.png";
 import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
 import kidfest from "@/assets/kidfest-hero.jpg";
 import hero from "@/assets/hero-main1.png";
-import about from "@/assets/2.jpeg";
 import fancy from "@/assets/event-fancy.jpg";
 import marathon from "@/assets/event-marathon.jpg";
+import g2 from "@/assets/20.png";
+import about from "@/assets/2.jpeg";
 import g5 from "@/assets/4.jpeg";
-
 import g6 from "@/assets/5.jpeg";
 import g7 from "@/assets/1.jpeg";
 import g8 from "@/assets/14.jpeg";
@@ -22,31 +20,17 @@ import g12 from "@/assets/1.jpeg";
 import g13 from "@/assets/20.png";
 import g14 from "@/assets/14.jpeg";
 
-export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Gallery — Soujanya Hegde" },
-      { name: "description", content: "Moments from weddings, corporate events, fashion shows and Kidfest." },
-      { property: "og:title", content: "Gallery — Soujanya Hegde" },
-      { property: "og:description", content: "Moments from weddings, corporate events and Kidfest." },
-      { property: "og:image", content: g1 },
-    ],
-  }),
-  component: GalleryPage,
-});
-
 const all = [hero, g1, g2, g3, g4, kidfest, about, fancy, marathon, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14];
 const rail1 = [g1, g2, g3, g4, kidfest, about];
 const rail2 = [hero, fancy, marathon, g1, g3, kidfest];
 
-function GalleryPage() {
+export default function GalleryPage() {
   return (
     <div className="py-20 bg-background">
       <Reveal className="text-center mb-12 px-6">
         <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Memories</p>
         <h1 className="font-display text-4xl md:text-6xl font-bold mt-3">Gallery</h1>
       </Reveal>
-
       <div className="space-y-6 mb-16">
         <Marquee direction="left">
           {rail1.map((src, i) => (
@@ -63,7 +47,6 @@ function GalleryPage() {
           ))}
         </Marquee>
       </div>
-
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 [column-fill:_balance]">
           {all.map((src, i) => (

@@ -1,13 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
 import { InteractiveOHeading } from "@/components/InteractiveOHeading";
 import about from "@/assets/1.jpeg";
 import g1 from "@/assets/16.jpeg";
 import g2 from "@/assets/17.jpeg";
-
 import g5 from "@/assets/4.jpeg";
-
 import g6 from "@/assets/5.jpeg";
 import g7 from "@/assets/1.jpeg";
 import g8 from "@/assets/14.jpeg";
@@ -18,23 +15,10 @@ import g12 from "@/assets/1.jpeg";
 import g13 from "@/assets/20.png";
 import g14 from "@/assets/14.jpeg";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Mrs. Soujanya Hegde" },
-      { name: "description", content: "Meet Mrs. Soujanya Hegde — celebrity host, event planner, corporate trainer and influencer based in Mangalore." },
-      { property: "og:title", content: "About — Mrs. Soujanya Hegde" },
-      { property: "og:description", content: "Meet Mrs. Soujanya Hegde — celebrity host, event planner, corporate trainer and influencer." },
-      { property: "og:image", content: about },
-    ],
-  }),
-  component: AboutPage,
-});
-
 const roles = ["Event Planner", "Celebrity Host", "Corporate Trainer", "Influencer", "Mrs India Finalist"];
 const rail = [g1, g2, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, about];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <div className="bg-background">
       <section className="py-20 px-6 lg:px-10">
@@ -60,7 +44,6 @@ function AboutPage() {
               />
             </div>
           </Reveal>
-
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <Reveal>
               <div className="relative">
@@ -91,7 +74,6 @@ function AboutPage() {
           </div>
         </div>
       </section>
-
       <section className="py-12 bg-cream">
         <Reveal className="text-center mb-8">
           <h3 className="font-display text-2xl md:text-3xl font-bold">Past Highlights</h3>
