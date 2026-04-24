@@ -63,7 +63,7 @@ function HomePage() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 backdrop-blur text-xs md:text-sm font-medium border border-white/20"
             >
               <Sparkles className="h-3.5 w-3.5 text-[oklch(0.85_0.13_80)]" />
-              Finalist · Mrs India Worldwide Entrepreneur
+              Finalist · Mrs Mangalore Worldwide Entrepreneur
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
