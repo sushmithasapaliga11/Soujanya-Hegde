@@ -6,17 +6,24 @@ import { Button } from "@/components/ui/button";
 import { AnnouncementMarquee, ReverseMarquee } from "@/components/AnnouncementMarquee";
 import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
-<<<<<<< HEAD
-import heroImg from "@/assets/2.jpeg";
-=======
-import { RegistrationModal } from "@/components/RegistrationModal";
-import heroImg from "@/assets/hero-soujanya.jpg";
->>>>>>> origin/main
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
+import heroImg from "@/assets/hero-main1.png";
+import g1 from "@/assets/16.jpeg";
+import g2 from "@/assets/17.jpeg";
+
+import g5 from "@/assets/4.jpeg";
+
+import g6 from "@/assets/5.jpeg";
+import g7 from "@/assets/1.jpeg";
+import g8 from "@/assets/14.jpeg";
+import g9 from "@/assets/12.jpeg";
+import g10 from "@/assets/2.jpeg";
+import g11 from "@/assets/5.jpeg";
+import g12 from "@/assets/1.jpeg";
+import g13 from "@/assets/2.jpeg";
+import g14 from "@/assets/14.jpeg";
+
 import kidfest from "@/assets/kidfest-hero.jpg";
+import { RegistrationModal } from "@/components/RegistrationModal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,7 +39,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const rail = [g1, g2, g3, g4, kidfest];
+const rail = [g1, g2, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14];
 
 function HomePage() {
   const [registrationOpen, setRegistrationOpen] = useState(false);
@@ -41,11 +48,11 @@ function HomePage() {
     <div className="-mt-20">
       {/* HERO */}
       <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-black">
           <img
             src={heroImg}
             alt="Mrs. Soujanya Hegde hosting on stage"
-            className="h-full w-full object-cover animate-ken-burns"
+           className="h-full w-full object-cover object-top animate-ken-burns"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/40 to-transparent" />
         </div>

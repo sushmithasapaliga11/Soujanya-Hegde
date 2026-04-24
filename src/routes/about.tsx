@@ -3,10 +3,20 @@ import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
 import { InteractiveOHeading } from "@/components/InteractiveOHeading";
 import about from "@/assets/1.jpeg";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/2.jpeg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
+import g1 from "@/assets/16.jpeg";
+import g2 from "@/assets/17.jpeg";
+
+import g5 from "@/assets/4.jpeg";
+
+import g6 from "@/assets/5.jpeg";
+import g7 from "@/assets/1.jpeg";
+import g8 from "@/assets/14.jpeg";
+import g9 from "@/assets/12.jpeg";
+import g10 from "@/assets/18.png";
+import g11 from "@/assets/19.png";
+import g12 from "@/assets/1.jpeg";
+import g13 from "@/assets/20.png";
+import g14 from "@/assets/14.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -22,7 +32,7 @@ export const Route = createFileRoute("/about")({
 });
 
 const roles = ["Event Planner", "Celebrity Host", "Corporate Trainer", "Influencer", "Mrs India Finalist"];
-const rail = [g1, g2, g3, g4, about];
+const rail = [g1, g2, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, about];
 
 function AboutPage() {
   return (
