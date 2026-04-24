@@ -1,12 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook, Youtube, Linkedin, MapPin, MessageCircle } from "lucide-react";
+import { Instagram, Facebook, MapPin } from "lucide-react";
 
 const socials = [
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: MessageCircle, href: "https://wa.me/919999999999", label: "WhatsApp" },
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/hegdesoujanya/", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/destroyer9611/", label: "Facebook" },
 ];
 
 export function SiteFooter() {
@@ -39,20 +36,31 @@ export function SiteFooter() {
         <div>
           <h4 className="font-display text-lg font-semibold">Explore</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            {[
-              ["/about", "About"],
-              ["/services", "Services"],
-              ["/kidfest", "Kidfest"],
-              ["/videos", "Watch Me"],
-              ["/gallery", "Gallery"],
-              ["/contact", "Contact"],
-            ].map(([to, label]) => (
-              <li key={to}>
-                <Link to={to} className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
-                  {label}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <Link to="/kidfest" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
+                Kidfest
+              </Link>
+            </li>
+            <li>
+              <a href="https://sparktreefoundation.in/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
+                SparkTree Foundation
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/sareerun.mangalore/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
+                Sarees Run
+              </a>
+            </li>
+            <li>
+              <a href="/chatroom" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
+                Chatroom
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/letzparty_decorstore/" target="_blank" rel="noreferrer" className="text-primary-foreground/80 hover:text-[oklch(0.85_0.13_80)] transition-colors">
+                Let'Z Party
+              </a>
+            </li>
           </ul>
         </div>
         <div>

@@ -87,7 +87,10 @@ export function RegistrationModal({
                 <Sparkles className="h-5 w-5 text-primary" /> Kidfest Registration
               </DialogTitle>
               <DialogDescription>
-                May 16 & 17, 2026 · Palemar Convention Centre, Mangalore
+                May 16 & 17, 2026 ·{" "}
+                <a href="https://maps.app.goo.gl/ipia3jdSHg3ct7Hn8" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:opacity-80">
+                  Palemar Convention Centre, Mangalore
+                </a>
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit(onSubmit)} className="grid gap-4 mt-2">
