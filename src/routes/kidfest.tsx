@@ -29,13 +29,13 @@ export const Route = createFileRoute("/kidfest")({
 
 const happenings = [
   { icon: Tent, title: "Flea Market", img: flea },
-  { icon: Sparkles, title: "Puppet Show" },
+  // { icon: Sparkles, title: "Puppet Show" },
   { icon: GraduationCap, title: "Experiential Learning" },
   { icon: Trophy, title: "Competitions", img: fancy },
-  { icon: Award, title: "Recognition" },
+  // { icon: Award, title: "Recognition" },
   { icon: Music, title: "Stage Performances" },
-  { icon: Footprints, title: "Marathon", img: marathon },
-  { icon: Crown, title: "Awards Night" },
+  // { icon: Footprints, title: "Marathon", img: marathon },
+  // { icon: Crown, title: "Awards Night" },
 ];
 
 const competitions = [
@@ -85,7 +85,7 @@ function KidfestPage() {
               className="mt-5 text-lg flex flex-wrap gap-x-6 gap-y-2 text-primary-foreground/90"
             >
               <span className="inline-flex items-center gap-2"><Calendar className="h-4 w-4" /> May 16 & 17, 2026</span>
-              <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Palemar Convention Centre, Maryhill, Mangalore</span>
+              <a href="https://maps.app.goo.gl/ipia3jdSHg3ct7Hn8" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 underline underline-offset-2 hover:opacity-80"><MapPin className="h-4 w-4" /> Palemar Convention Centre, Maryhill, Mangalore</a>
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
@@ -103,31 +103,7 @@ function KidfestPage() {
         </div>
       </section>
 
-      {/* What's happening */}
-      <section className="py-20 px-6 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <Reveal className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Two big days</p>
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-3">What's Happening</h2>
-          </Reveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {happenings.map((h, i) => (
-              <Reveal key={h.title} delay={i * 60}>
-                <div className="group relative rounded-2xl overflow-hidden bg-card border border-border hover-lift h-44">
-                  {h.img && (
-                    <img src={h.img} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500" loading="lazy" />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
-                  <div className="relative h-full p-5 flex flex-col justify-end text-primary-foreground">
-                    <h.icon className="h-8 w-8 mb-2 text-[oklch(0.85_0.13_80)] group-hover:scale-110 transition-transform" />
-                    <h3 className="font-display text-xl font-semibold">{h.title}</h3>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Competitions */}
       <section className="py-20 px-6 lg:px-10 bg-cream">
@@ -163,6 +139,38 @@ function KidfestPage() {
               <p className="font-medium">Who can participate? <span className="text-primary">Kids up to 10th standard · Twins / Triplets welcome</span></p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+       {/* What's happening */}
+      <section className="py-20 px-6 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <Reveal className="text-center mb-12">
+            <p className="text-xs uppercase tracking-[0.3em] text-primary font-semibold">Two big days</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mt-3">What's Happening</h2>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {happenings.map((h, i) => (
+              <Reveal key={h.title} delay={i * 60}>
+                <div className="group relative rounded-2xl overflow-hidden bg-card border border-border hover-lift h-44">
+                  {h.img && (
+                    <img src={h.img} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500" loading="lazy" />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 to-transparent" />
+                  <div className="relative h-full p-5 flex flex-col justify-end text-primary-foreground">
+                    <h.icon className="h-8 w-8 mb-2 text-[oklch(0.85_0.13_80)] group-hover:scale-110 transition-transform" />
+                    <h3 className="font-display text-xl font-semibold">{h.title}</h3>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="mt-10 text-center">
+            <div className="inline-block px-6 py-4 rounded-2xl bg-secondary border border-border">
+              <p className="font-medium">Big dreams start here— <span className="text-primary">grow · learn · explore · shine </span></p>
+            </div>
+          </Reveal>
+        
         </div>
       </section>
 

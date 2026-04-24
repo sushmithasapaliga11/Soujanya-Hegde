@@ -52,7 +52,7 @@ export function SiteHeader() {
         </nav>
         <div className="hidden lg:block">
           <Button asChild className="bg-gradient-primary text-primary-foreground shadow-elegant hover:opacity-90">
-            <Link to="/contact">Book Me</Link>
+            <Link to="/contact">Let's Create Magic</Link>
           </Button>
         </div>
         <button
