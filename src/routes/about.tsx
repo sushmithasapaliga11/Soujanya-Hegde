@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
 import { InteractiveOHeading } from "@/components/InteractiveOHeading";
-import about from "@/assets/about-soujanya.jpg";
+import about from "@/assets/1.jpeg";
 import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
+import g2 from "@/assets/2.jpeg";
 import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
 

@@ -6,8 +6,12 @@ import { Button } from "@/components/ui/button";
 import { AnnouncementMarquee, ReverseMarquee } from "@/components/AnnouncementMarquee";
 import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
+<<<<<<< HEAD
+import heroImg from "@/assets/2.jpeg";
+=======
 import { RegistrationModal } from "@/components/RegistrationModal";
 import heroImg from "@/assets/hero-soujanya.jpg";
+>>>>>>> origin/main
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
@@ -36,7 +40,7 @@ function HomePage() {
   return (
     <div className="-mt-20">
       {/* HERO */}
-      <section className="relative h-[100vh] min-h-[640px] w-full overflow-hidden">
+      <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImg}
