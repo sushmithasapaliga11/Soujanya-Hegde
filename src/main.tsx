@@ -13,7 +13,7 @@ if (redirect) {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/Soujanya-Hegde">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>
